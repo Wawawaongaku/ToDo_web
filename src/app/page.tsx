@@ -1,5 +1,5 @@
 
-import styles from "./page.module.css";
+import styles from "../../styles/page.module.css";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,8 +10,10 @@ export default function Home() {
                 <p className={styles.description}>
                     A simple ToDo list app
                 </p>
-                <Link href="/todos" className={styles.link}>Go to ToDo List</Link>
-                <Link href="/tetris" className={styles.link}>Go to Tetris</Link>
+                <li>
+                    <Link href="/todos" className={styles.link}>/todo</Link><br/>
+                    <Link href="/tetris" className={styles.link}>/tetris</Link>
+                </li>
             </main>
         </div>
     );
