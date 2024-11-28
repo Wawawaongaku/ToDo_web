@@ -8,7 +8,7 @@ export default function Home() {
             <main className={styles.main}>
                 <h1 className={styles.title}>KTPC PC Seminar</h1>
                 <p className={styles.description}>
-                    A simple ToDo list app
+                    A simple ToDo list app<br/>tetris
                 </p>
                 <li>
                     <Link href="/todos" className={styles.link}>/todo</Link><br/>
