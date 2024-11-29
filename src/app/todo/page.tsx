@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../../styles/page.module.css";
+import Link from "next/link";
 
 interface Todo {
     id: number;
@@ -23,6 +24,12 @@ const TodoApp: React.FC = () => {
         setNewTodo("");
     };
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            addTodo();
+        }
+    };
+
     const toggleTodo = (id: number) => {
         setTodos(
             todos.map((todo) =>
@@ -40,30 +47,36 @@ const TodoApp: React.FC = () => {
             <div className={styles.page}>
                 <h1>ToDo App</h1>
                 <input
+                    className={styles.form}
                     type="text"
                     value={newTodo}
                     onChange={(e) => setNewTodo(e.target.value)}
+                    onKeyDown={handleKeyPress}
                 />
-                <button onClick={addTodo}>Add Todo</button>
-                <ul>
-                    {todos.map((todo) => (
-                        <li key={todo.id}>
-                            <span
-                                style={{
-                                    textDecoration: todo.completed
-                                        ? "line-through"
-                                        : "none",
-                                }}
-                                onClick={() => toggleTodo(todo.id)}
-                            >
-                                {todo.text}
-                            </span>
-                            <button onClick={() => deleteTodo(todo.id)}>
-                                Delete
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+            <Link href="/">ホームに戻る</Link>
+                <div className={styles.input}>
+                    <div className={styles.main}>
+                        <ul>
+                            {todos.map((todo) => (
+                                <li key={todo.id}>
+                                    <span
+                                        style={{
+                                            textDecoration: todo.completed
+                                                ? "line-through"
+                                                : "none",
+                                        }}
+                                        onClick={() => toggleTodo(todo.id)}
+                                    >
+                                        {todo.text}
+                                    </span>
+                                    <button onClick={() => deleteTodo(todo.id)}>
+                                        ☓
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </>
     );

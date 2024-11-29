@@ -8,11 +8,11 @@
 
     display: grid;
     grid-template-rows: 20px 1fr 20px;
+    padding: 50px;
+    gap: 1rem;
     align-items: center;
     justify-items: center;
-    min-height: 100svh;
-    padding: 80px;
-    gap: 64px;
+    justify-content: center;
     font-family: var(--font-geist-sans);
 }
 
@@ -187,4 +187,20 @@ a.secondary {
     .logo {
         filter: invert();
     }
+}
+
+.input {
+    height: 200px;
+    width: 20rem;
+    border: #fff 1px solid;
+    overflow: scroll;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    max-width:100%;
+    width: 10rem;
+    
 }
