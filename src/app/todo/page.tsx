@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import styles from "../../styles/page.module.css";
 
 interface Todo {
     id: number;
@@ -36,7 +37,7 @@ const TodoApp: React.FC = () => {
 
     return (
         <>
-            <div>
+            <div className={styles.page}>
                 <h1>ToDo App</h1>
                 <input
                     type="text"
