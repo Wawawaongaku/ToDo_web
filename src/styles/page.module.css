@@ -29,6 +29,7 @@
 
 .main {
     display: flex;
+    padding: 1rem;
     flex-direction: column;
     gap: 32px;
     grid-row-start: 2;
